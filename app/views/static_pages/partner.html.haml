@@ -1,0 +1,30 @@
+- title = 'Đối tác'
+- provide(:partner_menu, 'current')
+- provide(:title, title)
+- wiselinks_title(full_title(title))
+:javascript
+  $(function(){
+    $('li.current').removeClass();
+    $('li#partner').addClass('current');})
+= render 'layouts/sub_header', title: title
+#main
+  .content.sub.full
+    %p
+      Trong nhiều năm, chúng tôi đã và đang thực hiện công tác bốc xếp và
+      vận chuyển hàng hóa tại các khu vực cảng phía Bắc (Hòn Gai, Cẩm Phả,
+      Hải Phòng, Móng Cái ...) cho các quý công ty tại các khu vực nói
+      trên với năng suất xếp dỡ, vận chuyển hàng hóa, đảm bảo an toàn cho
+      người và phương tiện như:
+      %br/
+    %ul
+      %li Tập đoàn Than Khoáng Sản Việt Nam
+      %li Công ty Kho vận và cảng Cẩm Phả
+      %li Công ty cổ phần Kỷ Tâm
+      %li Công ty kho vận Hòn Gai
+      %li Công ty TNHH 1 thành viên cảng Quảng Ninh
+      %li Công ty TNHH Vĩnh Phước Hải Phòng
+      %li
+        Công ty TNHH MTV vật tư vận tải và xếp dỡ - Vinacomin
+  %div
+    %img{src: "/assets/vinacomin.jpg"}/
+    %img{src: "/assets/camphaport.jpg"}/

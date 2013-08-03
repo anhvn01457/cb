@@ -1,0 +1,42 @@
+- title = 'Dịch vụ'
+- provide(:service_menu, 'current')
+- provide(:title, title)
+- wiselinks_title(full_title(title))
+:javascript
+  $(function(){
+    $('li.current').removeClass();
+    $('li#service').addClass('current');})
+= render 'layouts/sub_header', title: title
+#main
+  .content.sub.full
+    %p
+      %strong Công ty TNHH Huy Mạnh
+      hiện là công ty vận tải, chuyển tải thủy và cho thuê cẩu nổi hàng đầu phía Bắc hiện nay. Với nhiều năm kinh nghiệm hoạt động trong lĩnh vực này chúng tôi luôn mang đến những dịch vụ tốt nhất tới quý khách hàng. Các ngành nghề dịch vụ chính của chúng tôi bao gồm :
+    %h5
+      %a#vantaiduongthuy>
+      LĨNH VỰC VẬN TẢI BẰNG ĐƯỜNG THỦY:
+    %ul
+      %li Với đoàn sà lan hơn 20.000 tấn phương tiện, trọng tải mỗi đoàn 1200-2000 tấn. Công ty Huy Mạnh cung cấp dịch vụ vận tải than, vận tải hàng hóa, xi măng, clanhke, vật tư, thiết bị tại các cảng biển với chi phí cạnh tranh uy tín tới các khách hàng cá nhân, tổ chức, doanh nghiệp trong và ngoài nước.
+      %li Đối với lĩnh vực giao nhận và chuyển tải than, công ty chúng tôi luôn có cán bộ, kĩ thuật viên trực 24/24 tại các cảng than khi làm việc với các đối tác, bố trí sà lan vào cảng nhận hàng theo đúng kế hoạch, giải quyết những vướng mắc liên quan, đảm bảo an toàn tuyệt đối cho người và phương tiện hàng hóa.
+      %li Bố trí các sà lan boong nổi loại từ 500 tấn/sà lan trở lên.
+      %li Các đoàn sà lan của công ty Huy Mạnh chúng tôi luôn có bạt che hàng, che phủ chống thấm nước trong những điều kiện khăc nhiệt như mưa bão, đảm bảo đủ niêm phong kiện kẹp chì bảo quản hàng hóa trong quá trình vận chuyển và có lốp chống va để bảo đảm an toàn khi áp mạn vào tàu và cần cẩu nổi.
+      %li Cung cấp phương tiện đảm bảo đủ điều kiện kĩ thuật, đủ diều kiện thực hiện giao nhận hàng theo mớn nước, được phép lưu hành theo đúng quy định hiện hành của Đăng Kiểm Việt Nam.
+      %li Cung cấp đầy đủ hóa đơn chứng từ cũng như những tài liệu liên quan với quý khách hàng nhanh chóng tiện lợi.
+    %h5
+      %a#caunoi>
+      LĨNH VỰC BỐC XẾP HÀNG HÓA BẰNG CẨU NỔI – CẨU TẦU TRÊN BIỂN:
+    %ul
+      %li Chúng tôi nhận cẩu hàng hóa trên biển ( than, cát xi măng, clanhke, vật tư, thiết bị…) giữa các tầu có trọng tải lớn, độ cao lên tới 28m, tầm với 30m, với dung tích gầu từ 8-10m khối, sức nâng trên 16 tấn.
+      %li Chuyên phục vụ các công trình xây dựng trên khắp các địa bàn đường thủy tại Quảng Ninh, Hải Phòng và các vùng sông biển lân cận.
+      %li Với đội ngũ công nhân lành nghề lái cẩu tầu và cẩu nổi có trình độ cao cùng nhiều năm kinh nghiệm mang đến quý khách hàng sự phục vụ chu đáo, chuyên nghiệp.
+    %h5
+      %a#chothue>
+      LĨNH VỰC CHO THUÊ THIẾT BỊ :
+    %ul
+      %li Chuyên cho thuê máy xúc (Máy đào) với dung tích gầu 8m khối, 10m khối, 12m khối với trong tải vừa và lớn, các loại máy xúc lật của các hãng uy tín hàng đầu thế giới như Hyundai, kawasaki, komatsu…
+      %li Chuyên cho thuê cẩu bánh xích với trọng tải lớn với các dòng máy kh100, kh150…
+    %p
+      Chúng tôi nhận kí hợp đồng với các cá nhân, tổ chức. doanh nghiệp trong và ngoài nước. Ký hợp đồng theo tháng, theo ca, hoặc trọn gói tùy theo yêu cầu quý khách và công việc.
+      %br/
+      Khi có nhu cầu xin hãy liên hệ trực tiếp với công ty Huy Mạnh chúng tôi theo:
+    %p Số điện thoại :0333 870 634 hoặc Email: caubienhuymanh@gmail.com để nhận tư vấn và báo giá.

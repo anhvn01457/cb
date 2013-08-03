@@ -1,0 +1,22 @@
+#header
+  #logo
+    %a{href: root_path, title: "Cầu Biển Huy Mạnh", :data => {:push => :true}}
+      %img.png{alt: "Cầu Biển Huy Mạnh", src: "/assets/logo.png"}/
+  %ul.menu
+    %li#home{class: yield(:home_menu)}
+      %a{href: root_path, :data => {:push => :true}} Home
+    %li#about{class: yield(:about_menu)}
+      %a{href: about_path, :data => {:push => :true}} Giới thiệu
+      %ul.sub-menu
+        %li#about{class: yield(:about_menu)}
+          %a{href: about_path, :data => {:push => :true}} Giới thiệu Công ty
+        %li#structure{class: yield(:structure_menu)}
+          %a{href: structure_path, :data => {:push => :true}} Cơ cấu tổ chức
+    %li#service{class: yield(:service_menu)}
+      %a{href: service_path, :data => {:push => :true}} Dịch vụ
+    %li#partner{class: yield(:partner_menu)}
+      %a{href: partner_path, :data => {:push => :true}} Đối tác
+    %li#gallery{class: yield(:gallery_menu)}
+      %a{href: gallery_path, :data => {:push => :true}} Hình ảnh
+    %li#contact{class: yield(:contact_menu)}
+      %a{href: contact_path, :data => {:push => :true}} Liên hệ

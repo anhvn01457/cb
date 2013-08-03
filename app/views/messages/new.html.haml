@@ -1,0 +1,64 @@
+- title = 'Liên hệ'
+- provide(:contact_menu, 'current')
+- provide(:title, title)
+- wiselinks_title(full_title(title))
+:css
+  #contact-banner {display: none;}
+:javascript
+  $(function(){
+    $('li.current').removeClass();
+    $('li#contact').addClass('current');
+    $("html, body").animate({
+      scrollTop: $("#main").offset().top
+    }, 500);})
+= render 'layouts/sub_header', title: title
+#main
+  .content.sub
+    #contactform
+      = form_for @message do |f|
+        - @message.errors.full_messages.each do |msg|
+          %p
+            = "** #{msg}"
+        %p
+          Tên của bạn (yêu cầu)
+          %br/
+          %span
+            = f.text_field :name, size: "40"
+        %p
+          Công ty
+          %br/
+          %span
+            = f.text_field :company, size: "40"
+        %p
+          Email (yêu cầu)
+          %br/
+          %span
+            = f.text_field :email, size: "40"
+        %p
+          Điện thoại liên hệ (yêu cầu)
+          %br/
+          %span
+            = f.text_field :phone, size: "40"
+        %p
+          Nội dung liên hệ (yêu cầu)
+          %br/
+          %span
+            = f.text_area :content, cols: "40", rows: "10"
+        %p
+          = f.submit "Send"
+  .sidebar
+    .box.four
+      %h4 Công ty TNHH Huy Mạnh
+      .textwidget
+        %p
+          %b Địa chỉ:
+          %br/
+          Xuân Sơn – Đông Triều
+          %br/
+          Quảng Ninh, Việt Nam
+        %p
+          %b Tel:
+          0333 870 634
+          %br/
+          %b Fax:
+          0333 870634

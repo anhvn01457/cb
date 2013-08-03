@@ -1,0 +1,48 @@
+- title = 'Giới thiệu công ty'
+- provide(:about_menu, 'current')
+- provide(:title, title)
+- wiselinks_title(full_title(title))
+:javascript
+  $(function(){
+    $('li.current').removeClass();
+    $('li#about').addClass('current');})
+= render 'layouts/sub_header', title: title
+#main
+  .content.sub.full
+    %p
+      Công ty TNHH Huy Mạnh được thành lập theo giấy chứng nhận đăng ký kinh doanh do Sở Kế hoạch và Đầu tư tỉnh Quảng Ninh cấp ngày 5 tháng 3 năm 2003.
+    %h6 TRỤ SỞ CHÍNH
+    %table
+      %tbody
+        %tr
+          %td
+            %strong Địa chỉ
+          %td : Số 202 - Xuân Sơn - Đông Triều - Quảng Ninh
+        %tr
+          %td
+            %strong Điện thoại
+          %td : 0333 870643
+        %tr
+          %td
+            %strong Fax
+          %td : 0333 870643
+        %tr
+          %td
+            %strong Email
+          %td : vantaibienhuymanh@gmail.com
+        %tr
+          %td
+            %strong Website
+          %td : http://www.caubien.com
+    %p/
+    %h6 NGÀNH NGHỀ KINH DOANH
+    %ul
+      %li Vận tải hàng hóa ven biển và viễn dương
+      %li Vận tải hàng hóa đường thủy nội địa
+      %li Vận tải hàng hóa bằng đường bộ
+      %li Bốc xếp hang hóa trên biển
+      %li Sửa chữa và bảo dưỡng phương tiện vận tải biển
+      %li Kho bãi và lưu trữ hàng hóa
+      %li Đóng tàu và cẩu kiện nổi
+      %li Chuẩn bị mặt bằng
+      %li Cho thuê máy móc thiết bị vận tải biển

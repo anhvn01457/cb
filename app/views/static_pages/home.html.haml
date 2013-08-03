@@ -1,0 +1,208 @@
+- wiselinks_title(full_title)
+- provide(:home_menu, 'current')
+= javascript_include_tag "jquery.cycle.all", "jquery.easing.1.3"
+:javascript
+  $(function(){
+    $('li.current').removeClass();
+    $('li#home').addClass('current');
+    if ($('#slider_area').length>0){
+      $('#slider_area').cycle({                        
+        fx:    'uncover', 
+        timeout:  5000,
+        easing: 'easeOutBack',
+        prev: '.prev', 
+        next: '.next',
+        cleartype:  1,
+        pause:           true,     // true to enable "pause on hover"
+        pauseOnPagerHover: true,   // true to pause when hovering over pager link       
+        before:  onBefore, 
+        after:   onAfter ,        
+        pagerAnchorBuilder: function(idx) { 
+          return '<a href="#" title=""><img src="/assets/pixel.gif" width="14" heigth="14"></a>'; 
+        }
+      });
+    } 
+    $('.prev, .next').css({opacity:0});
+    $('#slider').hover(function()
+    {
+            $('.prev, .next').stop().animate({opacity:1},400);
+    },
+    function()
+    {
+            $('.prev, .next').stop().animate({opacity:0},400);
+    });
+
+    function onBefore() {
+      if ($.support.opacity){
+        $('.desc').stop().animate({opacity:0},0);
+      }else{
+          
+      }
+    } 
+    function onAfter() {
+      if ($.support.opacity){
+        $('.desc').stop().animate({opacity:1},400);
+      }else{
+          
+      }     
+    }
+  });
+.clear
+#slider
+  #numbers
+    .prev
+      %img{alt: "", src: "/assets/8/slider_left.gif"}/
+    .next
+      %img{alt: "", src: "/assets/8/slider_right.gif"}/
+  #slider_area
+    .slide
+      .desc
+        %b.title HUY MẠNH 05
+        %br/
+        Dung tích gầu: 5-7 khối
+        %br/
+        Tầm với: 25m
+        %br/
+        Chiều cao: 20m
+        %br/
+        Bốc tàu: 2-3 vạn tấn
+        %br/
+      %img.image{alt: "", src: "/assets/caubien5.jpg"}/
+    .slide
+      .desc
+        %b.title HUY MẠNH 06
+        %br/
+        Dung tích gầu: 5-7 khối
+        %br/
+        Tầm với: 25m
+        %br/
+        Chiều cao: 20m
+        %br/
+        Bốc tàu: 2-3 vạn tấn
+        %br/
+      %img.image{alt: "", src: "/assets/caubien10.jpg"}/
+    .slide
+      .desc
+        %b.title HUY MẠNH 07
+        %br/
+        Dung tích gầu: 5-7 khối
+        %br/
+        Tầm với: 25m
+        %br/
+        Chiều cao: 20m
+        %br/
+        Bốc tàu: 2-3 vạn tấn
+        %br/
+      %img.image{alt: "", src: "/assets/caubien15.jpg"}/
+    .slide
+      .desc
+        %b.title HUY MẠNH 07
+        %br/
+        Dung tích gầu: 5-7 khối
+        %br/
+        Tầm với: 25m
+        %br/
+        Chiều cao: 20m
+        %br/
+        Bốc tàu: 2-3 vạn tấn
+        %br/
+      %img.image{alt: "", src: "/assets/caubien16.jpg"}/
+    .slide
+      .desc
+        %b.title HUY MẠNH 09
+        %br/
+        Dung tích gầu: 8-10 khối
+        %br/
+        Sức nâng: 16 tấn
+        %br/
+        Tầm với: 30m
+        %br/
+        Chiều cao: 25m
+        %br/
+        Bốc tàu: > 5 vạn tấn
+        %br/
+      %img.image{alt: "", src: "/assets/caubien17.jpg"}/
+    .slide
+      .desc
+        %b.title HUY MẠNH 09
+        %br/
+        Dung tích gầu: 8-10 khối
+        %br/
+        Sức nâng: 16 tấn
+        %br/
+        Tầm với: 30m
+        %br/
+        Chiều cao: 25m
+        %br/
+        Bốc tàu: > 5 vạn tấn
+        %br/
+      %img.image{alt: "", src: "/assets/caubien20.jpg"}/
+    .slide
+      .desc
+        %br/
+        %b.title XÀ LAN
+        %br/
+        Tổng số: 20 000 tấn phương tiện
+        %br/
+        Trọng tải mỗi đoàn: 1200-2000 tấn
+        %br/
+      %img.image{alt: "", src: "/assets/caubien6.jpg"}/
+    .slide
+      .desc
+        %br/
+        %b.title MÁY XÚC 01
+        %br/
+        Dung tích gầu: 12 khối
+        %br/
+      %img.image{alt: "", src: "/assets/caubien1.jpg"}/
+    .slide
+      .desc
+        %br/
+        %b.title MÁY XÚC 02 - 03
+        %br/
+        Dung tích gầu: 8 khối
+        %br/
+      %img.image{alt: "", src: "/assets/caubien26.jpg"}/
+    .slide
+      .desc
+        %br/
+        %b.title ĐOÀN PHƯƠNG TIỆN
+        %br/
+        Trọng tải: 1200-2000 tấn
+        %br/
+      %img.image{alt: "", src: "/assets/caubien23.jpg"}/
+.line.margin
+#main
+  .box.four
+    %h4
+      %a{href: about_path, title: "Giới Thiệu", :data => {:push => :true}} GIỚI THIỆU
+    %p
+      Công ty TNHHH Huy Mạnh được thành lập theo giấy chứng nhận đăng ký kinh doanh do Sở Kế hoạch và Đầu tư tỉnh Quảng Ninh cấp ngày 5 tháng 3 năm 2003...
+      %a.more{href: about_path, title: "Giới Thiệu", :data => {:push => :true}}
+        %br>/
+        Xem thêm
+  .box.four
+    %h4
+      %a{href: service_path(anchor: "vantaiduongthuy"), title: "LĨNH VỰC VẬN TẢI BẰNG ĐƯỜNG THỦY"} DỊCH VỤ
+    %p
+      LĨNH VỰC VẬN TẢI BẰNG ĐƯỜNG THỦY
+      %a.more{href: service_path(anchor: "vantaiduongthuy"), title: "LĨNH VỰC VẬN TẢI BẰNG ĐƯỜNG THỦY"}
+        %br>/
+        Xem thêm
+  .box.four
+    %h4
+      %a{href: service_path(anchor: "caunoi"), title: "LĨNH VỰC BỐC XẾP HÀNG HÓA BẰNG CẨU NỔI"} DỊCH VỤ
+    %p
+      LĨNH VỰC BỐC XẾP HÀNG HÓA BẰNG CẨU NỔI – CẨU TẦU TRÊN BIỂN
+      %a.more{href: service_path(anchor: "caunoi"), title: "LĨNH VỰC BỐC XẾP HÀNG HÓA BẰNG CẨU NỔI"}
+        %br>/
+        Xem thêm
+  .box.four.last
+    %h4
+      %a{href: service_path(anchor: "chothue"), title: "CHO THUÊ THIẾT BỊ"} DỊCH VỤ
+    %p
+      LĨNH VỰC CHO THUÊ THIẾT BỊ
+      %a.more{href: service_path(anchor: "chothue"), title: "CHO THUÊ THIẾT BỊ"}
+        %br>/
+        Xem thêm
+  .clear

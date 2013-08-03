@@ -1,0 +1,26 @@
+- title = 'Cơ cấu tổ chức'
+- provide(:about_menu, 'current')
+- provide(:title, title)
+- wiselinks_title(full_title(title))
+= render 'layouts/sub_header', title: title
+:javascript
+  $(function(){
+    $('li.current').removeClass();
+    $('li#about').addClass('current');})
+#main
+  .content.sub.full
+    %ul
+      %li
+        %strong Giám đốc
+        \: Ông Tăng Ngọc Mỳ ( SĐT : 0913 578 496)
+      %li
+        %strong Phó giám đốc điều hành
+        \: Ông Tăng Ngọc Huy
+      %li
+        %strong> Kế toán trưởng
+        \: Bà Diễm Xuân
+      %li Tổng số cán bộ công nhân viên chức của công ty 500 người
+    %p/
+    %h4 Sơ đồ tổ chức
+    %div
+      %img{alt: "Sơ đồ tổ chức", src: "/assets/so-do-to-chuc.png", title: "Sơ đồ tổ "}/

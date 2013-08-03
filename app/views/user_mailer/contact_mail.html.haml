@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %h1
+      = "Bạn có một email liên lạc từ caubien."
+    %p 
+      Tên người liên lạc:
+      = @message.name
+    %p
+      Công ty:
+      = @message.company
+    %p
+      Số điện thoại:
+      = @message.phone
+    %p
+      Email:
+      = @message.email
+    %p
+      Nội dung liên lạc
+      = @message.content

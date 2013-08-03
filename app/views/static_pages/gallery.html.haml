@@ -1,0 +1,31 @@
+- title = 'Hình ảnh'
+- provide(:gallery_menu, 'current')
+- provide(:title, title)
+- wiselinks_title(full_title(title))
+:javascript
+  $(function(){
+    $('li.current').removeClass();
+    $('li#gallery').addClass('current');})
+= render 'layouts/sub_header', title: title
+= javascript_include_tag "jquery.prettyPhoto"
+= stylesheet_link_tag "prettyPhoto", media: "screen"
+#main
+  .portfolio_wrapper
+    - 7.times do |i|
+      - 4.times do |j|
+        - n = i * 4 + j + 1
+        - if n <= 26
+          .box.four.portfolio
+            .imgarea.magnifier.alignleft
+              %a{href: "/assets/caubien#{n}.jpg", rel: "caubien[huymanh]",
+                title: "Cau Bien Huy Manh #{n}"}
+                %img.image.portf.preload{alt: "Cau Bien Huy Manh #{n}",
+                  src: "/assets/caubien#{n}.jpg"}/
+            .clear
+          - if n % 4 == 0
+            .line.margin          
+:javascript
+  $(function(){
+    $("a[rel^='caubien']").prettyPhoto({autoplay_slideshow: true,
+      theme: 'dark_rounded', social_tools: false});
+  });
