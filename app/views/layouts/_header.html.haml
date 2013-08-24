@@ -1,7 +1,7 @@
 #header
   #logo
     %a{href: root_path, title: "Cầu Biển Huy Mạnh", :data => {:push => :true}}
-      %img.png{alt: "Cầu Biển Huy Mạnh", src: "/assets/logo.png"}/
+      %img.png{alt: "Cầu Biển Huy Mạnh", src: image_path("logo.png")}/
   %ul.menu
     %li#home{class: yield(:home_menu)}
       %a{href: root_path, :data => {:push => :true}} Home

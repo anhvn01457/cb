@@ -17,15 +17,15 @@
         - if n <= 26
           .box.four.portfolio
             .imgarea.magnifier.alignleft
-              %a{href: "/assets/caubien#{n}.jpg", rel: "caubien[huymanh]",
+              %a{href: image_path("caubien#{n}.jpg"), rel: "caubien[huymanh]",
                 title: "Cau Bien Huy Manh #{n}"}
                 %img.image.portf.preload{alt: "Cau Bien Huy Manh #{n}",
-                  src: "/assets/caubien#{n}.jpg"}/
+                  src: image_path("caubien#{n}.jpg")}/
             .clear
           - if n % 4 == 0
-            .line.margin          
+            .line.margin
 :javascript
   $(function(){
     $("a[rel^='caubien']").prettyPhoto({autoplay_slideshow: true,
-      theme: 'dark_rounded', social_tools: false});
+      theme: 'dark_rounded', social_tools: false, deeplinking: false});
   });

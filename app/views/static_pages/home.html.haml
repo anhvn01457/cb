@@ -18,7 +18,7 @@
         before:  onBefore, 
         after:   onAfter ,        
         pagerAnchorBuilder: function(idx) { 
-          return '<a href="#" title=""><img src="/assets/pixel.gif" width="14" heigth="14"></a>'; 
+          return "<a href='#'' title=''><img src=#{image_path 'pixel.gif'} width='14' heigth='14'></a>"; 
         }
       });
     } 
@@ -51,9 +51,9 @@
 #slider
   #numbers
     .prev
-      %img{alt: "", src: "/assets/8/slider_left.gif"}/
+      %img{alt: "", src: image_path("slider_left.gif")}/
     .next
-      %img{alt: "", src: "/assets/8/slider_right.gif"}/
+      %img{alt: "", src: image_path("slider_right.gif")}/
   #slider_area
     .slide
       .desc
@@ -67,7 +67,7 @@
         %br/
         Bốc tàu: 2-3 vạn tấn
         %br/
-      %img.image{alt: "", src: "/assets/caubien5.jpg"}/
+      %img.image{alt: "", src: image_path("caubien5.jpg")}/
     .slide
       .desc
         %b.title HUY MẠNH 06
@@ -80,7 +80,7 @@
         %br/
         Bốc tàu: 2-3 vạn tấn
         %br/
-      %img.image{alt: "", src: "/assets/caubien10.jpg"}/
+      %img.image{alt: "", src: image_path("caubien10.jpg")}/
     .slide
       .desc
         %b.title HUY MẠNH 07
@@ -93,7 +93,7 @@
         %br/
         Bốc tàu: 2-3 vạn tấn
         %br/
-      %img.image{alt: "", src: "/assets/caubien15.jpg"}/
+      %img.image{alt: "", src: image_path("caubien15.jpg")}/
     .slide
       .desc
         %b.title HUY MẠNH 07
@@ -106,7 +106,7 @@
         %br/
         Bốc tàu: 2-3 vạn tấn
         %br/
-      %img.image{alt: "", src: "/assets/caubien16.jpg"}/
+      %img.image{alt: "", src: image_path("caubien16.jpg")}/
     .slide
       .desc
         %b.title HUY MẠNH 09
@@ -121,7 +121,7 @@
         %br/
         Bốc tàu: > 5 vạn tấn
         %br/
-      %img.image{alt: "", src: "/assets/caubien17.jpg"}/
+      %img.image{alt: "", src: image_path("caubien17.jpg")}/
     .slide
       .desc
         %b.title HUY MẠNH 09
@@ -136,7 +136,7 @@
         %br/
         Bốc tàu: > 5 vạn tấn
         %br/
-      %img.image{alt: "", src: "/assets/caubien20.jpg"}/
+      %img.image{alt: "", src: image_path("caubien20.jpg")}/
     .slide
       .desc
         %br/
@@ -146,7 +146,7 @@
         %br/
         Trọng tải mỗi đoàn: 1200-2000 tấn
         %br/
-      %img.image{alt: "", src: "/assets/caubien6.jpg"}/
+      %img.image{alt: "", src: image_path("caubien6.jpg")}/
     .slide
       .desc
         %br/
@@ -154,7 +154,7 @@
         %br/
         Dung tích gầu: 12 khối
         %br/
-      %img.image{alt: "", src: "/assets/caubien1.jpg"}/
+      %img.image{alt: "", src: image_path("caubien1.jpg")}/
     .slide
       .desc
         %br/
@@ -162,7 +162,7 @@
         %br/
         Dung tích gầu: 8 khối
         %br/
-      %img.image{alt: "", src: "/assets/caubien26.jpg"}/
+      %img.image{alt: "", src: image_path("caubien26.jpg")}/
     .slide
       .desc
         %br/
@@ -170,7 +170,7 @@
         %br/
         Trọng tải: 1200-2000 tấn
         %br/
-      %img.image{alt: "", src: "/assets/caubien23.jpg"}/
+      %img.image{alt: "", src: image_path("caubien23.jpg")}/
 .line.margin
 #main
   .box.four

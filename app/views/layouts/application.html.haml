@@ -16,7 +16,7 @@
   %body
     /[if lt IE 7] <p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgradae to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
     /[if IE 6]
-      %link{href: "/assets/ie6.css", rel: "stylesheet", type: "text/css"}/
+      = stylesheet_link_tag "ie6", media: "all"
     #container
       = render 'layouts/header'
       #content
