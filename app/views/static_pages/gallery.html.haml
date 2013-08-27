@@ -2,13 +2,59 @@
 - provide(:gallery_menu, 'current')
 - provide(:title, title)
 - wiselinks_title(full_title(title))
+= render 'layouts/sub_header', title: title
+= javascript_include_tag "jquery.prettyPhoto"
+= stylesheet_link_tag "prettyPhoto", media: "screen"
 :javascript
   $(function(){
     setCurrentMenu('gallery');
-  })
-= render 'layouts/sub_header', title: title
-= javascript_include_tag "jquery.prettyPhoto", "jquery.lazyload.min"
-= stylesheet_link_tag "prettyPhoto", media: "screen"
+  });
+
+  //preloading 
+  $(function(){
+    //$('.preload').hide();//hide all the images on the page
+    $('.play,.magnifier').css({opacity:0});
+    $('.preload').css({opacity:0});
+    $('.preload').addClass("animated");
+    $('.play,.magnifier').addClass("animated_icon");
+  });
+
+
+  var i = 0;//initialize
+  var cint=0;//Internet Explorer Fix
+  $(function(){//The load event will only fire if the entire page or document is fully loaded
+    var cint = setInterval("PreImage(i)",70);//500 is the fade in speed in milliseconds
+  });
+
+  function PreImage() {
+    var images = $('.preload').length;//count the number of images on the page
+    if (i >= images) {// Loop the images
+      clearInterval(cint);//When it reaches the last image the loop ends
+    }
+    $('.preload:hidden').eq(i).fadeIn(500);//fades in the hidden images one by one
+    $('.animated_icon').eq(0).animate({opacity:1},{"duration": 500});
+    $('.animated').eq(0).animate({opacity:1},{"duration": 500});
+    $('.animated').eq(0).removeClass("animated");
+    $('.animated_icon').eq(0).removeClass("animated_icon");
+    i++;//add 1 to the count
+  }
+
+  //image effects 
+  $(function(){
+           var image_e= $(".image.portf, .image.product_image");
+           image_e.mouseover(function(){$(this).stop().animate({ opacity:0.7
+                           }, 400);
+           }).mouseout(function(){
+                   image_e.stop().animate({ 
+                           opacity:1
+                           }, 400 );
+           });
+  });
+
+  $(function(){
+    $("a[rel^='caubien']").prettyPhoto({autoplay_slideshow: true,
+      theme: 'facebook', social_tools: false, deeplinking: false});
+  });
 #main
   .portfolio_wrapper
     - 7.times do |i|
@@ -20,17 +66,7 @@
               %a{href: image_path("caubien#{n}.jpg"), rel: "caubien[huymanh]",
                 title: "Cau Bien Huy Manh #{n}"}
                 %img.image.portf.preload{alt: "Cau Bien Huy Manh #{n}",
-                  src: image_path("grey.gif"),
-                  "data-original" => image_path("caubien#{n}.jpg")}/
+                  src: image_path("caubien#{n}.jpg")}/
             .clear
           - if n % 4 == 0
             .line.margin
-:javascript
-  $(function(){
-    $("a[rel^='caubien']").prettyPhoto({autoplay_slideshow: true,
-      theme: 'dark_rounded', social_tools: false, deeplinking: false});
-    $("img.preload").lazyload({ 
-      threshold : 200,
-      effect : "fadeIn"
-    });
-  });
