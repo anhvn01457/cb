@@ -5,8 +5,7 @@
 = javascript_include_tag "jcarousellite_1.0.1.min"
 :javascript
   $(function(){
-    $('li.current').removeClass();
-    $('li#partner').addClass('current');
+    setCurrentMenu('partner');
     $(".partnerlogo").jCarouselLite({
       auto: 3000,
       speed: 800,

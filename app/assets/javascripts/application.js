@@ -33,3 +33,10 @@ $(function() {
         $('.loader').hide();
     });
 });
+
+var setCurrentMenu = function(menuName) {
+    if ($('li.current').attr('id') != menuName) {
+        $('li.current').removeClass();
+        $('li#'+menuName).addClass('current');
+    };
+}

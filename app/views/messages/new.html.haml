@@ -6,8 +6,7 @@
   #contact-banner {display: none;}
 :javascript
   $(function(){
-    $('li.current').removeClass();
-    $('li#contact').addClass('current');
+    setCurrentMenu('contact');
     $("html, body").animate({
       scrollTop: $("#main").offset().top
     }, 500);})

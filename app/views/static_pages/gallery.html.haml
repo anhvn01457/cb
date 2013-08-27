@@ -4,8 +4,8 @@
 - wiselinks_title(full_title(title))
 :javascript
   $(function(){
-    $('li.current').removeClass();
-    $('li#gallery').addClass('current');})
+    setCurrentMenu('gallery');
+  })
 = render 'layouts/sub_header', title: title
 = javascript_include_tag "jquery.prettyPhoto", "jquery.lazyload.min"
 = stylesheet_link_tag "prettyPhoto", media: "screen"

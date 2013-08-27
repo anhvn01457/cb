@@ -4,8 +4,8 @@
 - wiselinks_title(full_title(title))
 :javascript
   $(function(){
-    $('li.current').removeClass();
-    $('li#about').addClass('current');})
+    setCurrentMenu('about');
+  })
 = render 'layouts/sub_header', title: title
 #main
   .content.sub.full

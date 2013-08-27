@@ -5,8 +5,8 @@
 = render 'layouts/sub_header', title: title
 :javascript
   $(function(){
-    $('li.current').removeClass();
-    $('li#about').addClass('current');})
+    setCurrentMenu('about');
+  })
 #main
   .content.sub.full
     %table
