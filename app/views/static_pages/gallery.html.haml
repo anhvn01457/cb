@@ -7,7 +7,7 @@
     $('li.current').removeClass();
     $('li#gallery').addClass('current');})
 = render 'layouts/sub_header', title: title
-= javascript_include_tag "jquery.prettyPhoto"
+= javascript_include_tag "jquery.prettyPhoto", "jquery.lazyload.min"
 = stylesheet_link_tag "prettyPhoto", media: "screen"
 #main
   .portfolio_wrapper
@@ -20,7 +20,8 @@
               %a{href: image_path("caubien#{n}.jpg"), rel: "caubien[huymanh]",
                 title: "Cau Bien Huy Manh #{n}"}
                 %img.image.portf.preload{alt: "Cau Bien Huy Manh #{n}",
-                  src: image_path("caubien#{n}.jpg")}/
+                  src: image_path("grey.gif"),
+                  "data-original" => image_path("caubien#{n}.jpg")}/
             .clear
           - if n % 4 == 0
             .line.margin
@@ -28,4 +29,8 @@
   $(function(){
     $("a[rel^='caubien']").prettyPhoto({autoplay_slideshow: true,
       theme: 'dark_rounded', social_tools: false, deeplinking: false});
+    $("img.preload").lazyload({ 
+      threshold : 200,
+      effect : "fadeIn"
+    });
   });

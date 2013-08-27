@@ -9,18 +9,26 @@
     $('li#about').addClass('current');})
 #main
   .content.sub.full
-    %ul
-      %li
-        %strong Giám đốc
-        \: Ông Tăng Ngọc Mỳ ( SĐT : 0913 578 496)
-      %li
-        %strong Phó giám đốc điều hành
-        \: Ông Tăng Ngọc Huy
-      %li
-        %strong> Kế toán trưởng
-        \: Bà Diễm Xuân
-      %li Tổng số cán bộ công nhân viên chức của công ty 500 người
+    %table
+      %tbody
+        %tr
+          %td
+            %strong Giám đốc
+          %td : Ông Tăng Ngọc Mỳ (SĐT : 0913 578 496)
+        %tr
+          %td
+            %strong Phó giám đốc điều hành
+          %td : Ông Tăng Ngọc Huy
+        %tr
+          %td
+            %strong Kế toán trưởng
+          %td : Bà Diễm Xuân
+        %tr
+          %td
+            %strong Tổng số cán bộ, công nhân viên chức
+          %td : 500 người
     %p/
-    %h4 Sơ đồ tổ chức
+    %h6 SƠ ĐỒ TỔ CHỨC
     %div
-      %img{alt: "Sơ đồ tổ chức", src: image_path("so-do-to-chuc.png", title: "Sơ đồ tổ ")}/
+      %img.aligncenter{alt: "Sơ đồ tổ chức", src: image_path("so-do-to-chuc.png",
+        title: "Sơ đồ tổ chức")}/

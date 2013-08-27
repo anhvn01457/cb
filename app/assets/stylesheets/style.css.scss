@@ -20,7 +20,7 @@ h1,h2,h1 a,h2 a,h3,h4,h5,h6,h3 a,h4 a,h5 a,h6 a {
 }
 
 h1,h2,h3,h4,h5,h6 {
-    font-family: 'Trebuchet MS',Arial,Helvetica,san-serif;
+    font-family: ‘Arial Black’, Gadget, sans-serif;
     font-weight: 400;
     letter-spacing: 0;
     padding: 0 0 10px;
@@ -93,6 +93,10 @@ a {
     color: #fef200;
     outline: none;
     text-decoration: underline;
+}
+
+a.img {
+    color: transparent;
 }
 
 input,select,textarea {
@@ -452,24 +456,6 @@ a.more {
     width: 305px;
 }
 
-a.banner_button {
-    background: image-url("banner_button.png") top no-repeat;
-    color: #2a2a2a;
-    display: block;
-    font-size: 20px;
-    height: 48px;
-    line-height: 44px;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    width: 220px;
-}
-
-a.banner_button:hover {
-    background: image-url("banner_button.png") 0 -48px no-repeat;
-    color: #000;
-}
-
 #footer .part1 {
     color: #818181;
     display: inline;
@@ -759,4 +745,32 @@ table td {
     padding-left: 10px;
     text-align: left;
     margin:10px; 
+}
+.contactbutton {
+  font-family: arial;
+  color: #000000 !important;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 0px 76px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #000000;
+  background: #FEF100;
+  background: linear-gradient(top,  #FEF100,  #FEC100);
+  background: -ms-linear-gradient(top,  #FEF100,  #FEC100);
+  background: -webkit-gradient(linear, left top, left bottom, from(#FEF100), to(#FEC100));
+  background: -moz-linear-gradient(top,  #FEF100,  #FEC100);
+}
+.contactbutton:hover {
+  color: #000000 !important;
+  text-decoration: underline;
+  background: #FEC100;
+  background: linear-gradient(top,  #FEC100,  #FEF100);
+  background: -ms-linear-gradient(top,  #FEC100,  #FEF100);
+  background: -webkit-gradient(linear, left top, left bottom, from(#FEC100), to(#FEF100));
+  background: -moz-linear-gradient(top,  #FEC100,  #FEF100);
+}
+.partnerlogo {
+    padding-left: 100px;
 }

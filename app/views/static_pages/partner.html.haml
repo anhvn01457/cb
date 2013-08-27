@@ -2,10 +2,16 @@
 - provide(:partner_menu, 'current')
 - provide(:title, title)
 - wiselinks_title(full_title(title))
+= javascript_include_tag "jcarousellite_1.0.1.min"
 :javascript
   $(function(){
     $('li.current').removeClass();
-    $('li#partner').addClass('current');})
+    $('li#partner').addClass('current');
+    $(".partnerlogo").jCarouselLite({
+      auto: 3000,
+      speed: 800,
+      visible: 4.5
+    });})
 = render 'layouts/sub_header', title: title
 #main
   .content.sub.full
@@ -23,8 +29,41 @@
       %li Công ty kho vận Hòn Gai
       %li Công ty TNHH 1 thành viên cảng Quảng Ninh
       %li Công ty TNHH Vĩnh Phước Hải Phòng
-      %li
-        Công ty TNHH MTV vật tư vận tải và xếp dỡ - Vinacomin
-  %div
-    %img{src: image_path("vinacomin.jpg")}/
-    %img{src: image_path("camphaport.jpg")}/
+      %li Công ty TNHH MTV vật tư vận tải và xếp dỡ - Vinacomin
+    %div.partnerlogo
+      %ul
+        %li
+          %a.img{href: "http://www.vinacomin.vn/", target: "_blank", 
+              title: "Tập đoàn Than Khoáng Sản Việt Nam", width: "200",
+              height: "159"}
+            %img{src: image_path("vinacomin.jpg"), 
+              alt: "Tập đoàn Than Khoáng Sản Việt Nam", width: "200",
+              height: "159"}/
+        %li
+          %a.img{href: "http://camphaport.com.vn/", target: "_blank", 
+              title: "Công ty Kho vận và cảng Cẩm Phả", width: "200",
+              height: "159"}
+            %img{src: image_path("camphaport.jpg"), 
+              alt: "Công ty Kho vận và cảng Cẩm Phả", width: "200",
+              height: "159"}/
+        %li
+          %a.img{href: "http://www.vmts.com.vn/", target: "_blank", 
+              title: "Công ty TNHH MTV vật tư vận tải và xếp dỡ - Vinacomin",
+              width: "200", height: "159"}
+            %img{src: image_path("vmts.jpg"), 
+              alt: "Công ty TNHH MTV vật tư vận tải và xếp dỡ - Vinacomin",
+              width: "200", height: "159"}/
+        %li
+          %a.img{href: "http://www.quangninhport.com.vn/", target: "_blank", 
+              title: "Công ty TNHH 1 thành viên cảng Quảng Ninh", width: "200",
+              height: "159"}
+            %img{src: image_path("quangninhport.jpg"), 
+              alt: "Công ty TNHH 1 thành viên cảng Quảng Ninh", width: "200",
+              height: "159"}/
+        %li
+          %a.img{href: "http://khovanhongai.vn/", target: "_blank", 
+              title: "Công ty kho vận Hòn Gai", width: "200",
+              height: "159"}
+            %img{src: image_path("khovanhongai.jpg"), 
+              alt: "Công ty kho vận Hòn Gai", width: "200",
+              height: "159"}/
